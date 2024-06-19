@@ -1,0 +1,505 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.setting-heading-main-container{
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.setting-heading-container{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 5px;
+}
+.setting-heading{
+    font-size: 30px;
+    font-weight: bold;
+}
+.setting-para{
+    font-weight: 600;
+}
+.setting-main-card-container{
+    width: 80vw;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.setting-card-continer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.setting-text-container{
+    width: 75%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.setting-text-container span{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(35, 35, 118);
+}
+.setting-icon{
+    width: 25%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.setting-hidden-container{
+    margin-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.hidden-text{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.hidden-input input{
+    border-radius: 8px;
+    width: 30vw;
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    font-size: 17px;
+    transition-property: all;
+    transition-duration: 300;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+.hidden-input input:focus{
+    outline: none;
+    border: 2px solid rgba(67, 119, 201, 0.685);
+}
+.hidden-input input ::placeholder{
+    color: rgb(243, 238, 238);
+    
+}
+.hidden-btn-main-container{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.discard-btn{
+    width: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.apply-changes-btn{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.discard-btn button{
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgba(67, 119, 201, 0.685);
+    cursor: pointer;
+    box-shadow: rgb(236, 233, 233);
+}
+.apply-changes-btn button{
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color:  rgba(67, 119, 201, 0.685);
+    color: white;
+    cursor: pointer;
+    box-shadow: rgb(236, 233, 233);
+}
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}
+.text-btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+.text{
+    width: 65%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.text span{
+    font-size: 20px;
+    color: rgb(35, 35, 118);
+    font-weight: 700;
+    cursor: pointer;
+}
+.num{
+    color: rgb(176, 170, 170);
+}
+.add-new-btn{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-new-btn button{
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color:  rgba(67, 119, 201, 0.685);
+    color: white;
+    cursor: pointer;
+    box-shadow: rgb(236, 233, 233);
+}
+.main-box-container{
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    align-items: center;
+    width: 100% 
+}
+.main-box-container .box1{
+    width: 30%;
+    display: flex;
+    justify-content: start;
+    align-items: center
+} 
+.box2{
+    width: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+} 
+.box3{
+    width: 18%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.box4{
+    width: 12%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.box-name{
+    font-weight: 700;
+    font-size: 20px;
+} 
+.containers-main-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 7.5px; 
+    margin-right: 7.5px; 
+}
+.cont1{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-left: 10px;
+    border-right: 1px solid black;
+} 
+.cont2{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-left: 10px;
+    border-right: 1px solid black;
+}
+.cont3{
+    width: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 23px;
+    padding-left: 10px;
+    border-right: 1px solid black;
+}
+.cont4{
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.cont1 .cont-name{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.cont2 .cont-name{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.cont-btn{
+    border: none;
+    border-radius: 20px;
+    padding: 10px 10px;
+    font-size: 17px;
+    width: 120px;
+    font-weight: bold;
+    background-color:  white;
+    color: black;
+    cursor: pointer;
+    box-shadow: rgb(236, 233, 233);
+}
+.contact-text-container{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+.contact-text{
+    font-size: 16px;
+    font-weight: 700;
+}
+.settings-delete-btn-cont{
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-top: 15px;
+}
+.settings-delete-btn{
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 17px;
+    width: 200px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgb(236, 233, 233);
+}
+@media screen and (max-width : 950px){
+    .setting-text-container span{
+        font-size: 20px;
+    }
+    .hidden-input input{
+        width: 40vw;
+    }
+    .Email-main-card{
+        width: 84%;
+    }
+    .discard-btn{
+        width: 30%;
+    }
+    .apply-changes-btn{
+        width: 30%;
+    }
+    .cont3{
+        width: 28%;
+    }
+    .box3{
+        width: 28%;
+    }
+    .cont1 .cont-name{
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+    .cont2 .cont-name{
+        font-size: 17px;
+    }
+    .box-name{
+        font-size: 18px;
+    } 
+
+}
+@media screen and (max-width : 740px){
+    .hidden-input input{
+        width: 70vw;
+    }
+    .cont-btn{
+        padding: 10px 10px;
+        font-size: 15px;
+        width: 90px;
+    }
+    .setting-container{
+        width: 90%;
+    }
+    .Email-main-card{
+        width: 82%;
+    }
+    .discard-btn{
+        width: 30%;
+        justify-content: start;
+    }
+    .apply-changes-btn{
+        width: 70%;
+        justify-content: start;
+    }
+    .btn-main-container{
+        justify-content: start;
+    }
+    .cont3{
+        width: 28%;
+    }
+    .box3{
+        width: 28%;
+    }
+    .cont1 .cont-name{
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .cont2 .cont-name{
+        font-size: 16px;
+    }
+    
+}
+@media screen and (max-width : 630px){
+    .setting-text-container span{
+        font-size: 17px;
+    }
+    .discard-btn{
+        width: 30%;
+        justify-content: start;
+    }
+    
+    .apply-changes-btn{
+        width: 70%;
+        justify-content: start;
+    }
+    .btn-main-container{
+        justify-content: start;
+    }
+    .cont3{
+        width: 28%;
+    }
+    .box3{
+        width: 28%;
+    }
+    .cont1 .cont-name{
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    .cont2 .cont-name{
+        font-size: 14px;
+    }
+    .box-name{
+        font-weight: 700;
+        font-size: 15px;
+    }
+    .cont-btn{
+        padding: 8px 8px;
+        font-size: 14px;
+        width: 80px;
+     }
+     .text span{
+        font-size: 20px;
+    }
+    .add-new-btn{
+        width: 50%;
+    }
+    .add-new-btn button{
+        padding: 7px 16px;
+        font-size: 15px;
+    }
+    .contact-text{
+        font-size: 13px;
+    }
+}     
+@media screen and (max-width : 480px){
+
+    .hidden-input input{
+        width: 65vw;
+    }
+    .hidden-text{
+        font-size: 12px;
+    }
+    .discard-btn{
+        width: 40%;
+        justify-content: start;
+    }
+    .Email-main-card{
+        width: 78%;
+    }
+    .apply-changes-btn{
+        width: 60%;
+        justify-content: start;
+    }
+    .btn-main-container{
+        justify-content: start;
+    }
+    .cont3{
+        width: 30%;
+    }
+    .box3{
+        width: 30%;
+    }
+    .cont1 .cont-name{
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+    .cont1{
+        width: 40%;
+    }
+    .main-box-container .box1{
+        width: 40%;
+    }
+    .cont2 .cont-name{
+        font-size: 12px;
+    }
+    .box-name{
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .cont-btn{
+        padding: 6px 6px;
+        font-size: 12px;
+        width: 64px;
+    }
+    .settings-delete-btn{
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: 17px;
+        margin: auto;
+        width: 85%;
+    } 
+}
+@media screen and (max-width : 375px){
+
+    .hidden-input input{
+        width: 68vw;
+    }
+    .discard-btn{
+        width: 40%;
+        justify-content: start;
+    }
+    .Email-main-card{
+        width: 75%;
+    }
+    .apply-changes-btn{
+        width: 60%;
+        justify-content: start;
+    }
+    .btn-main-container{
+        justify-content: start;
+    }
+}
