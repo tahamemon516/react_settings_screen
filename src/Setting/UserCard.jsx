@@ -1,4 +1,5 @@
 import React from "react";
+import "./UserCard.css"
 import ArrowIcon from "../icons/arrow";
 
 const UserCard = ({ isOpen, handler }) => {
@@ -6,7 +7,7 @@ const UserCard = ({ isOpen, handler }) => {
     <div className="setting-main-card-container">
       <div className="setting-card-container">
         <div className="setting-text-container">
-          <span onClick={handler} style={{cursor: 'pointer'}}>
+          <span onClick={handler} style={{ cursor: "pointer" }}>
             Secondary User
           </span>
         </div>
@@ -22,43 +23,57 @@ const UserCard = ({ isOpen, handler }) => {
       </div>
       {isOpen && (
         <div className={`setting-hidden-container`}>
-          <div className="secondary-user-container">
-            <div className="main-box-container">
-              <div className="box1">
-                <span className="box-name">Name</span>
-              </div>
-
-              <div className="box2">
-                <span className="box-name">Email</span>
-              </div>
-
-              <div className="box3">
-                <span className="box-name">Permission</span>
-              </div>
-
-              <div className="box4">
-                <span className="box-name">Name</span>
-              </div>
-            </div>
-            <div className="containers-main-container">
-              <div className="cont1">
-                <span className="cont-name">Jhon Hopkin</span>
-                <span className="cont-name">Thomas Lee</span>
-                <span className="cont-name">Zach Dawson</span>
-              </div>
-
-              <div className="cont2"></div>
-
-              <div className="cont3">
-                <button className="cont-btn">Admin</button>
-
-                <button className="cont-btn">User</button>
-
-                <button className="cont-btn">User</button>
-              </div>
-
-              <div className="cont4"></div>
-            </div>
+          <div className="container">
+            <ul className="responsive-table">
+              <li className="table-header">
+                <div className="col col-1">Name</div>
+                <div className="col col-2">Email</div>
+                <div className="col col-3">Permissions</div>
+                <div className="col col-4"></div>
+              </li>
+              <li className="table-row">
+                <div className="col col-1">
+                  John Hopkin
+                </div>
+                <div className="col col-2"></div>
+                <div className="col col-3">
+                  <div className="col-3-btn">Admin</div>
+                </div>
+                <div className="col col-4">
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                </div>
+              </li>
+              <li className="table-row">
+                <div className="col col-1">
+                  John Doe
+                </div>
+                <div className="col col-2"></div>
+                <div className="col col-3">
+                  <div className="col-3-btn">User</div>
+                </div>
+                <div className="col col-4">
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                </div>
+              </li>
+              <li className="table-row">
+                <div className="col col-1">
+                  Zach Dawson
+                </div>
+                <div className="col col-2"></div>
+                <div className="col col-3">
+                  <div className="col-3-btn">User</div>
+                </div>
+                <div className="col col-4">
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="user-contact-text">
+            "To Add Users in Bulk, Please Contact Us"
           </div>
         </div>
       )}

@@ -496,15 +496,21 @@
         width: 68vw;
     }
     .discard-btn{
-        width: 40%;
+        width: 50%;
         justify-content: start;
+    }
+    .discard-btn button{
+        font-size: 12px;
     }
     .Email-main-card{
         width: 75%;
     }
     .apply-changes-btn{
-        width: 60%;
-        justify-content: start;
+        width: 50%;
+        justify-content: center;
+    }
+    .apply-changes-btn button{
+        font-size: 12px;
     }
     .btn-main-container{
         justify-content: start;
