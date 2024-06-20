@@ -33,7 +33,7 @@
     border-radius: 8px;
     margin-top: 30px;
 }
-.setting-card-continer{
+.setting-card-container{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -55,6 +55,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    cursor: pointer;
 }
 .setting-hidden-container{
     margin-left: 15px;
@@ -63,9 +64,15 @@
 }
 .hidden-text{
     font-size: 16px;
-    font-weight: 700;
     margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
 }
+
+.settings-bold-text{
+    font-weight: 700;
+}
+
 .hidden-input input{
     border-radius: 8px;
     width: 30vw;
@@ -155,7 +162,7 @@
 .add-new-btn{
     width: 25%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 }
 .add-new-btn button{
