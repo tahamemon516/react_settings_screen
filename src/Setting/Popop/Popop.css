@@ -1,0 +1,165 @@
+.pop-main-cont{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    background-color: black;
+}
+.pop-iner-cont{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pop-card-cont{
+    min-height: 25%;
+    min-width: 25%;
+    background-color: rgb(237, 225, 225);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
+    opacity: 999;
+}
+.pop-heading h1{
+    text-align: center;
+    color: rgb(35, 35, 118);
+}
+.add-input input{
+    border-radius: 8px;
+    width: 77%;
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    font-size: 17px;
+    transition-property: all;
+    transition-duration: 300;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+}
+.add-input input:focus{
+    outline: none;
+    border: 2px solid rgba(67, 119, 201, 0.685);
+}
+.add-input input ::placeholder{
+    color: rgb(243, 238, 238);
+    
+}
+.add-input2 input{
+    border-radius: 8px;
+    width: 89%;
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    font-size: 17px;
+    transition-property: all;
+    transition-duration: 300;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.add-input2 input:focus{
+    outline: none;
+    border: 2px solid rgba(67, 119, 201, 0.685);
+}
+.add-input2 input ::placeholder{
+    color: rgb(243, 238, 238);
+    
+}
+.first-name-last-name-cont{
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+.email-roleAssigned-cont{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+.add-input{
+    width: 50%;
+}
+.add-input2{
+    width: 100%;
+}
+.add-pop-btn{
+    margin: auto;
+    padding: 10px 30px;
+    background-color: rgba(67, 119, 201, 0.685);
+    border: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.remove-pop-main-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+.remove-pop-main-cont h3{
+    font-size: 23px;
+    color: rgb(156, 146, 146);
+}
+.remove-pop-main-cont h3 span{
+    color: rgb(104, 97, 97);
+}
+.delete-input input{
+    border-radius: 8px;
+    width: 90%;
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    font-size: 17px;
+    transition-property: all;
+    transition-duration: 300;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.delete-input input:focus{
+    outline: none;
+    border: 2px solid rgba(67, 119, 201, 0.685);
+}
+.delete-input input ::placeholder{
+    color: rgb(243, 238, 238);
+    
+}
+.remove-pop-btn{
+    margin: auto;
+    padding: 10px 20px;
+    background-color: red;
+    border: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+@media screen and (max-width: 560px) {
+    .remove-pop-main-cont h3{
+        font-size: 20px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 490px) {
+    .remove-pop-main-cont h3{
+        font-size: 20px;
+        text-align: center;
+    }
+    .delete-input input{
+        width: 86%;
+    }
+    .add-input2 input{
+        width: 86%;
+    }
+    .add-input input{
+        width: 70%;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Setting.css";
-import { UserCard, CardLayout, EmailForm, CompanyForm, PasswordForm } from "./index";
+import { UserCard, CardLayout, EmailForm, CompanyForm, PasswordForm, PopopLayout, AddPopopForm, DeletePopopForm } from "./index";
 
 const Setting = () => {
   const [activeCard, setActiveCard] = useState(false);
@@ -100,6 +100,12 @@ const Setting = () => {
       >
         <PasswordForm form={form} handleChange={handleChange} />
       </CardLayout>
+
+      <PopopLayout
+      >
+        {/* <AddPopopForm/> */}
+        <DeletePopopForm/>
+      </PopopLayout>
 
       <UserCard
         isOpen={activeCard4}
