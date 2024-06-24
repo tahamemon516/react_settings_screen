@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Popop.css";
 
-const AddForm = ({ onClose }) => {
+const AddForm = ({ onClose, users, setUsers }) => {
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -23,7 +23,15 @@ const AddForm = ({ onClose }) => {
       alert("Please fill all the fields");
       return;
     }
-    alert("User Added Successfully");
+    const newUsers = [...users];
+    newUsers.push({
+      id: newUsers.length + 1,
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email: form.email,
+      role: form.roleAssigned,
+    });
+    setUsers(newUsers);
     setForm({
       ...form,
       firstName: "",

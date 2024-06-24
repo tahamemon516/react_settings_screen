@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserCard.css";
-import {ArrowIcon, StarIcon} from "../icons";
-import { USERS } from '../utils/users';
+import {ArrowIcon, StarIcon, EditIcon, DeleteIcon} from "../icons";
 
-const UserCard = ({ isOpen, handler, handleAddBtn }) => {
+const UserCard = ({ isOpen, handler, handleAddBtn, users, setUsers }) => {
+
+  const handleDelete = (index) => {
+    const newUsers = [...users];
+    newUsers.splice(index, 1);
+    setUsers(newUsers);
+  };
+
   return (
     <div className="setting-main-card-container">
       <div className="setting-card-container">
@@ -31,8 +37,9 @@ const UserCard = ({ isOpen, handler, handleAddBtn }) => {
                 <div className="col col-2">Email</div>
                 <div className="col col-3">Permissions</div>
                 <div className="col col-4"></div>
+                <div className="col col-4"></div>
               </li>
-              {USERS && USERS?.map((user, index) => (
+              {users && users?.map((user, index) => (
                 <li className="table-row" key={user.id}>
                 <div className="col col-1">{user.firstName} {user.lastName}</div>
                 <div className="col col-2">{user.email}</div>
@@ -42,8 +49,12 @@ const UserCard = ({ isOpen, handler, handleAddBtn }) => {
                 <div className="col col-4">
                   <StarIcon />
                   <StarIcon />
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
+                </div>
+                <div className="col col-4">
+                  <div style={{display: 'flex', gap: '20px'}}>
+                    <EditIcon/>
+                    <DeleteIcon  handler={() => handleDelete(index)}/>
+                  </div>
                 </div>
               </li>  
               ))}

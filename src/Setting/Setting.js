@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Setting.css";
 import { UserCard, CardLayout, EmailForm, CompanyForm, PasswordForm, ModalLayout, AddForm, DeleteForm } from "./index";
+import { USERS } from "../utils/users";
 
 const Setting = () => {
   const [activeCard, setActiveCard] = useState(false);
@@ -9,6 +10,7 @@ const Setting = () => {
   const [activeCard4, setActiveCard4] = useState(false);
   const [isDelete, setIsDelete] = useState(false);
   const [isAdd, setIsAdd] = useState(false);
+  const [users, setUsers] = useState(USERS);
   const [form, setForm] = useState({
     email: "",
     reEnterEmail: "",
@@ -107,6 +109,8 @@ const Setting = () => {
         isOpen={activeCard4}
         handler={() => setActiveCard4(!activeCard4)}
         handleAddBtn={() => setIsAdd(!isAdd)}
+        users={users}
+        setUsers={setUsers}
       />
 
       <div className="settings-delete-btn-cont">
@@ -122,7 +126,11 @@ const Setting = () => {
 
       {/* Add Model */}
       <ModalLayout isOpen={isAdd} >
-        <AddForm onClose={() => setIsAdd(!isAdd)} />
+        <AddForm 
+          onClose={() => setIsAdd(!isAdd)} 
+          users={users}
+          setUsers={setUsers}  
+        />
       </ModalLayout>
     </div>
   );
