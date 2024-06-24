@@ -124,12 +124,12 @@ const Setting = () => {
         <DeleteForm onClose={() => setIsDelete(!isDelete)} />
       </ModalLayout>
 
-      {/* Add Model */}
+      {/* Add Edit Model */}
       <ModalLayout isOpen={isAdd} >
-        <AddForm 
+        <AddForm
           onClose={() => setIsAdd(!isAdd)} 
           users={users}
-          setUsers={setUsers}  
+          setUsers={setUsers} 
         />
       </ModalLayout>
     </div>

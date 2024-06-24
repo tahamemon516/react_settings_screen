@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./Popop.css";
 
-const AddForm = ({ onClose, users, setUsers }) => {
+const AddForm = ({ onClose, users, setUsers, editUser }) => {
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    roleAssigned: "",
+    firstName: editUser?.user?.firstName || "",
+    lastName: editUser?.user?.lastName || "",
+    email: editUser?.user?.email || "",
+    roleAssigned: editUser?.user?.role || "",
   });
 
   const handleChange = (e) => {
@@ -23,15 +23,28 @@ const AddForm = ({ onClose, users, setUsers }) => {
       alert("Please fill all the fields");
       return;
     }
-    const newUsers = [...users];
-    newUsers.push({
-      id: newUsers.length + 1,
-      firstName: form.firstName,
-      lastName: form.lastName,
-      email: form.email,
-      role: form.roleAssigned,
-    });
-    setUsers(newUsers);
+    if (editUser?.user) {
+      const newUsers = [...users];
+      newUsers[editUser.index] = {
+        id: editUser.user.id,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        role: form.roleAssigned,
+      };
+      setUsers(newUsers);
+    } else {
+      const newUsers = [...users];
+      newUsers.push({
+        id: newUsers.length + 1,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        role: form.roleAssigned,
+      });
+      setUsers(newUsers);
+    }
+
     setForm({
       ...form,
       firstName: "",

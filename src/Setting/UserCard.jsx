@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import "./UserCard.css";
 import {ArrowIcon, StarIcon, EditIcon, DeleteIcon} from "../icons";
+import { ModalLayout, AddForm } from "./index";
 
 const UserCard = ({ isOpen, handler, handleAddBtn, users, setUsers }) => {
+
+  const [isEdit, setIsEdit] = useState(false);
+  const [editUser, setEditUser] = useState({});
 
   const handleDelete = (index) => {
     const newUsers = [...users];
     newUsers.splice(index, 1);
     setUsers(newUsers);
+  };
+
+  const handleEdit = (user, index) => {
+    setEditUser({ index, user})
+    setIsEdit(true);
   };
 
   return (
@@ -52,7 +61,7 @@ const UserCard = ({ isOpen, handler, handleAddBtn, users, setUsers }) => {
                 </div>
                 <div className="col col-4">
                   <div style={{display: 'flex', gap: '20px'}}>
-                    <EditIcon/>
+                    <EditIcon handler={() => handleEdit(user, index)}/>
                     <DeleteIcon  handler={() => handleDelete(index)}/>
                   </div>
                 </div>
@@ -65,6 +74,16 @@ const UserCard = ({ isOpen, handler, handleAddBtn, users, setUsers }) => {
           </div>
         </div>
       )}
+
+      {/* Add Edit Model */}
+      <ModalLayout isOpen={isEdit} >
+        <AddForm
+          onClose={() => setIsEdit(!isEdit)} 
+          users={users}
+          setUsers={setUsers}
+          editUser={editUser}
+        />
+      </ModalLayout>
     </div>
   );
 };
