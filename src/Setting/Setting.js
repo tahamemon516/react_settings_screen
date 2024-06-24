@@ -106,6 +106,7 @@ const Setting = () => {
       <UserCard
         isOpen={activeCard4}
         handler={() => setActiveCard4(!activeCard4)}
+        handleAddBtn={() => setIsAdd(!isAdd)}
       />
 
       <div className="settings-delete-btn-cont">

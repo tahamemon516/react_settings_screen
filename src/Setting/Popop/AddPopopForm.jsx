@@ -1,53 +1,89 @@
-import React from 'react'
-import "./Popop.css"
+import React, { useState } from "react";
+import "./Popop.css";
 
-const AddPopopForm = () => {
+const AddForm = ({ onClose }) => {
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    roleAssigned: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = () => {
+    if (
+      form.firstName === "" ||
+      form.lastName === "" ||
+      form.email === "" ||
+      form.roleAssigned === ""
+    ) {
+      alert("Please fill all the fields");
+      return;
+    }
+    alert("User Added Successfully");
+    setForm({
+      ...form,
+      firstName: "",
+      lastName: "",
+      email: "",
+      roleAssigned: "",
+    });
+    onClose();
+  };
+
   return (
-    <div className='add-pop-main-cont'>
-            <div className='pop-heading'>
-                <h1>Add User</h1>
-            </div>
-        <div className='first-name-last-name-cont'> 
-            <div className="add-input">
-                <input
-                    name="email"
-                    placeholder="First Name"
-                    type="email"
-                    required=""
-                />
-            </div>
-            <div className="add-input">
-                <input
-                    name="email"
-                    placeholder="First Name"
-                    type="email"
-                    required=""
-                />
-            </div>
+    <div className="add-pop-main-cont">
+      <div className="pop-heading">
+        <h1>Add User</h1>
+      </div>
+      <div className="first-name-last-name-cont">
+        <div className="add-input">
+          <input
+            name="firstName"
+            placeholder="First Name"
+            type="text"
+            value={form.firstName}
+            onChange={handleChange}
+          />
         </div>
-        <div className='email-roleAssigned-cont'> 
-            <div className="add-input2">
-                <input
-                    name="email"
-                    placeholder="Email"
-                    type="email"
-                    required=""
-                />
-            </div>
-            <div className="add-input2">
-                <input
-                    name="email"
-                    placeholder="Role Assigned"
-                    type="email"
-                    required=""
-                />
-            </div>
+        <div className="add-input">
+          <input
+            name="lastName"
+            placeholder="Last Name"
+            type="text"
+            value={form.lastName}
+            onChange={handleChange}
+          />
         </div>
-        <button className='add-pop-btn'>
-            Add
-        </button>
+      </div>
+      <div className="email-roleAssigned-cont">
+        <div className="add-input2">
+          <input
+            name="email"
+            placeholder="Email"
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="add-input2">
+          <input
+            name="roleAssigned"
+            placeholder="Role Assigned"
+            type="text"
+            value={form.roleAssigned}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+      <button className="add-pop-btn" onClick={handleSubmit}>
+        Add
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default AddPopopForm
+export default AddForm;

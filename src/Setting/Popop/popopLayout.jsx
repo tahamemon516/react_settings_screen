@@ -5,7 +5,7 @@ const PopopLayout = ({ isOpen, children }) => {
   return (
     <>
       {isOpen && (
-        <div className="pop-main-cont">
+        <div className="modal-overlay">
           <div className="pop-iner-cont">
             <div className="pop-card-cont">
               <div className="">{children}</div>

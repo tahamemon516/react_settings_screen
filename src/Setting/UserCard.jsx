@@ -1,8 +1,9 @@
 import React from "react";
-import "./UserCard.css"
-import ArrowIcon from "../icons/arrow";
+import "./UserCard.css";
+import {ArrowIcon, StarIcon} from "../icons";
+import { USERS } from '../utils/users';
 
-const UserCard = ({ isOpen, handler }) => {
+const UserCard = ({ isOpen, handler, handleAddBtn }) => {
   return (
     <div className="setting-main-card-container">
       <div className="setting-card-container">
@@ -12,7 +13,7 @@ const UserCard = ({ isOpen, handler }) => {
           </span>
         </div>
         {isOpen ? (
-          <div className="add-new-btn">
+          <div className="add-new-btn" onClick={handleAddBtn}>
             <button>Add New</button>
           </div>
         ) : (
@@ -31,45 +32,21 @@ const UserCard = ({ isOpen, handler }) => {
                 <div className="col col-3">Permissions</div>
                 <div className="col col-4"></div>
               </li>
-              <li className="table-row">
-                <div className="col col-1">
-                  John Hopkin
-                </div>
-                <div className="col col-2"></div>
+              {USERS && USERS?.map((user, index) => (
+                <li className="table-row" key={user.id}>
+                <div className="col col-1">{user.firstName} {user.lastName}</div>
+                <div className="col col-2">{user.email}</div>
                 <div className="col col-3">
-                  <div className="col-3-btn">Admin</div>
+                  <div className="col-3-btn">{user.role}</div>
                 </div>
                 <div className="col col-4">
+                  <StarIcon />
+                  <StarIcon />
                   <i className="fa-solid fa-star"></i>
                   <i className="fa-solid fa-star"></i>
                 </div>
-              </li>
-              <li className="table-row">
-                <div className="col col-1">
-                  John Doe
-                </div>
-                <div className="col col-2"></div>
-                <div className="col col-3">
-                  <div className="col-3-btn">User</div>
-                </div>
-                <div className="col col-4">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                </div>
-              </li>
-              <li className="table-row">
-                <div className="col col-1">
-                  Zach Dawson
-                </div>
-                <div className="col col-2"></div>
-                <div className="col col-3">
-                  <div className="col-3-btn">User</div>
-                </div>
-                <div className="col col-4">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                </div>
-              </li>
+              </li>  
+              ))}
             </ul>
           </div>
           <div className="user-contact-text">
