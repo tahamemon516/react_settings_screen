@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Setting.css";
-import { UserCard, CardLayout, EmailForm, CompanyForm, PasswordForm, PopopLayout, AddPopopForm, DeletePopopForm } from "./index";
+import { UserCard, CardLayout, EmailForm, CompanyForm, PasswordForm, ModalLayout, AddForm, DeleteForm } from "./index";
 
 const Setting = () => {
   const [activeCard, setActiveCard] = useState(false);
   const [activeCard2, setActiveCard2] = useState(false);
   const [activeCard3, setActiveCard3] = useState(false);
   const [activeCard4, setActiveCard4] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
+  const [isAdd, setIsAdd] = useState(false);
   const [form, setForm] = useState({
     email: "",
     reEnterEmail: "",
@@ -59,7 +61,7 @@ const Setting = () => {
   };
 
   const handleDeleteAccount = () => {
-    alert("Account Deleted Successfully");
+    setIsDelete(!isDelete);
   };
 
   return (
@@ -101,12 +103,6 @@ const Setting = () => {
         <PasswordForm form={form} handleChange={handleChange} />
       </CardLayout>
 
-      <PopopLayout
-      >
-        {/* <AddPopopForm/> */}
-        <DeletePopopForm/>
-      </PopopLayout>
-
       <UserCard
         isOpen={activeCard4}
         handler={() => setActiveCard4(!activeCard4)}
@@ -117,6 +113,16 @@ const Setting = () => {
           Delete Account
         </button>
       </div>
+
+      {/* Delete Model */}
+      <ModalLayout isOpen={isDelete} >
+        <DeleteForm onClose={() => setIsDelete(!isDelete)} />
+      </ModalLayout>
+
+      {/* Add Model */}
+      <ModalLayout isOpen={isAdd} >
+        <AddForm onClose={() => setIsAdd(!isAdd)} />
+      </ModalLayout>
     </div>
   );
 };
