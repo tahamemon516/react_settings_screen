@@ -101,7 +101,7 @@ const AddForm = ({ onClose, users, setUsers, editUser }) => {
         </div>
       </div>
       <button className="add-pop-btn" onClick={handleSubmit}>
-        Add
+        {editUser?.user ? "Update" : "Add"}
       </button>
     </div>
   );
